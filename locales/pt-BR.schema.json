@@ -1168,6 +1168,10 @@
         "image": {
           "label": "Imagem"
         },
+        "video": {
+          "label": "Video",
+          "info": "Tem prioridade sobre a imagem. Se ambos estiverem definidos, o vídeo será exibido."
+        },
         "height": {
           "options__1": {
             "label": "Adaptar à imagem"

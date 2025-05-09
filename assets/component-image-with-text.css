@@ -415,3 +415,18 @@
     row-gap: var(--grid-desktop-vertical-spacing);
   }
 }
+
+.image-with-text__image {
+  max-width: 100%;
+}
+
+.image-with-text video {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  object-fit: cover;
+}
+
+.image-with-text .image-with-text__media--adapt video {
+  height: unset;
+}

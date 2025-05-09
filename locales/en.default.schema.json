@@ -1329,9 +1329,13 @@
         "image": {
           "label": "Image"
         },
+        "video": {
+          "label": "Video",
+          "info": "Have priority over image. If both are set, video will be shown."
+        },
         "height": {
           "options__1": {
-            "label": "Adapt to image"
+            "label": "Adapt to video/image"
           },
           "options__2": {
             "label": "Small"
