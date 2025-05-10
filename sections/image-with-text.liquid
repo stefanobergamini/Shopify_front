@@ -41,11 +41,15 @@
               <video
                 class="lazyload-video"
                 muted
-                autoplay
-                loop
                 controls
-                playsinline
+                {% if section.settings.video_autoplay %}
+                  autoplay
+                {% endif %}
+                {% if section.settings.video_loop %}
+                  loop
+                {% endif %}
                 preload="none"
+                playsinline
               >
                 <source
                   data-src="{{ section.settings.video.sources[1].url }}"
@@ -137,6 +141,18 @@
       "id": "video",
       "label": "t:sections.image-with-text.settings.video.label",
       "info": "t:sections.image-with-text.settings.video.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_autoplay",
+      "label": "t:sections.image-with-text.settings.video_autoplay.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "video_loop",
+      "label": "t:sections.image-with-text.settings.video_loop.label",
+      "default": true
     },
     {
       "type": "image_picker",

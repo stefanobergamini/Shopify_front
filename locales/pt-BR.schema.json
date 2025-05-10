@@ -1169,8 +1169,14 @@
           "label": "Imagem"
         },
         "video": {
-          "label": "Video",
+          "label": "Vídeo",
           "info": "Tem prioridade sobre a imagem. Se ambos estiverem definidos, o vídeo será exibido."
+        },
+        "video_autoplay": {
+          "label": "Autoplay vídeo"
+        },
+        "video_loop": {
+          "label": "Repetir vídeo"
         },
         "height": {
           "options__1": {

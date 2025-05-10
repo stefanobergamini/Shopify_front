@@ -1320,18 +1320,24 @@
     "image-with-text": {
       "name": "Image with text",
       "settings": {
-      "header": {
-      "content": "Content"
-      },
-      "header_colors": {
-      "content": "Colors" 
-      },
+        "header": {
+        "content": "Content"
+        },
+        "header_colors": {
+        "content": "Colors" 
+        },
         "image": {
           "label": "Image"
         },
         "video": {
           "label": "Video",
           "info": "Have priority over image. If both are set, video will be shown."
+        },
+        "video_autoplay": {
+          "label": "Autoplay video"
+        },
+        "video_loop": {
+          "label": "Loop video"
         },
         "height": {
           "options__1": {
