@@ -38,10 +38,15 @@
             {% endif %}
           >
             {% if section.settings.video != blank %}
-              {{
-                section.settings.video
-                | video_tag: image_size: '1100x', autoplay: true, loop: true, controls: true, muted: true
-              }}
+              <video
+                class="lazyload-video"
+                src="{{ section.settings.video.sources[1].url }}"
+                loop
+                muted
+                playsinline
+                autoplay
+                preload="none"
+              ></video>
             {%- elsif section.settings.image != blank -%}
               {%- if section.settings.image_behavior == 'ambient' or section.settings.image_behavior == 'zoom-in' -%}
                 {%- assign widths = '198, 432, 642, 900, 1284, 1800' -%}
@@ -113,6 +118,28 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const lazyVideos = document.querySelectorAll('.lazyload-video');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const video = entry.target;
+          const source = document.createElement('source');
+          source.src = video.dataset.src;
+          source.type = 'video/mp4';
+          video.appendChild(source);
+          video.load();
+          observer.unobserve(video);
+        }
+      });
+    });
+
+    lazyVideos.forEach((video) => observer.observe(video));
+  });
+</script>
 
 {% schema %}
 {
