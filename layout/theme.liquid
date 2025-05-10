@@ -374,6 +374,11 @@
     {%- endif -%}
 
     <script>
+      /* 
+        Added the script for lazyload video so that the script is loaded only once even if there are multiple image-with-text sections.
+        Implemented lazy loading for the video element using the using the IntersectionObserver API. 
+        This improves performance by deferring the loading of the video file until the user scrolls it into view.
+      */
       document.addEventListener('DOMContentLoaded', () => {
         const lazyVideos = document.querySelectorAll('video.lazyload-video');
 
